@@ -19,7 +19,7 @@ plugin_version = "1.4.3"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
-plugin_description = """Plugin to manage Spools"""
+plugin_description = """Plugin to manage Spools customised"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
 plugin_author = "OllisGit"
