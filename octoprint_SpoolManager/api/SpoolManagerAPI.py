@@ -401,7 +401,7 @@ class SpoolManagerAPI(octoprint.plugin.BlueprintPlugin):
 		if (spoolModel != None):
 			spoolModelAsDict = Transformer.transformSpoolModelToDict(spoolModel)
 			#Take us back to the SpoolManager plugin tab
-			redirectURLWithSpoolSelection = flask.url_for("index", _external=True)+"#tab_plugin_SpoolManager-spoolId"+str(databaseId)
+			redirectURLWithSpoolSelection = flask.url_for("index", _external=True)+"#tab_plugin_consolidatedtabs")
 			return flask.redirect(redirectURLWithSpoolSelection,307)
 		else:
 			abort(404)
@@ -426,7 +426,7 @@ class SpoolManagerAPI(octoprint.plugin.BlueprintPlugin):
 				error_correction=qrcode.constants.ERROR_CORRECT_H
 			)
 
-			qrMaker.add_data(flask.url_for("plugin.SpoolManager.selectSpoolByQRCode", _external=True, _scheme="https", databaseId=databaseId))
+			qrMaker.add_data(flask.url_for("plugin.SpoolManager.selectSpoolByQRCode", _external=True, _scheme="http", databaseId=databaseId))
 			qrMaker.make(fit=True, )
 
 			fillColor = self._settings.get([SettingsKeys.SETTINGS_KEY_QR_CODE_FILL_COLOR])
