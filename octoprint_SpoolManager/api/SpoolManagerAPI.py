@@ -401,7 +401,7 @@ class SpoolManagerAPI(octoprint.plugin.BlueprintPlugin):
 		if (spoolModel != None):
 			spoolModelAsDict = Transformer.transformSpoolModelToDict(spoolModel)
 			#Take us back to the SpoolManager plugin tab
-			redirectURLWithSpoolSelection = flask.url_for("index", _external=True)+"#tab_plugin_consolidatedtabs")
+			redirectURLWithSpoolSelection = flask.url_for("index", _external=True)+"#tab_plugin_consolidatedtabs"
 			return flask.redirect(redirectURLWithSpoolSelection,307)
 		else:
 			abort(404)
